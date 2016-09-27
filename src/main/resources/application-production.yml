@@ -14,9 +14,9 @@ spring:
 
     dataSource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1/spring_blog?serverTimezone=UTC
+      url: jdbc:mysql://loaclhost:3306/shit_blog
       username: root
-      password:
+      password: 123
 
     hibernate:
       dialect: org.hibernate.dialect.MySQLDialect

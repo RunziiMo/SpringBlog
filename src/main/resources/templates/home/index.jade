@@ -1,28 +1,28 @@
 extends ../layout/app
 
 block page_title
-  .avatar
-    img(src="/images/user.jpg")
-  h1 #{App.getSiteName()}
-  p.meta #{App.getSiteSlogan()}
+    .avatar
+        img(src="/images/user.jpg")
+    h1 #{App.getSiteName()}
+    p.meta #{App.getSiteSlogan()}
 
-  p Hi, there. I'm Raysmond, a postgraduate of Computer Science in Fudan University from Shanghai, China. I love developing software and web applications and I blog about them.
+    p 这个博客就是用来找工作的，俗话说钱不是万能的，但没钱是万万不能的。连个博客都没有，我都不好意思在简历上写个人网址，随便部署个别人的博客压压惊
 
 block title 
-  = App.getSiteName()
+    = App.getSiteName()
 
 block content
-  // include ../posts/index
+    // include ../posts/index
 
-  .latest-posts
-    hr
-    h2.text-center Latest Posts
-  for post in posts
-    .post-item
-      a(href="/posts/#{post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}")
-        h2 #{post.getTitle()}
-        .meta
-          span #{viewHelper.getFormattedDate(post.getCreatedAt())}
+    .latest-posts
+        hr
+        h2.text-center Latest Posts
+    for post in posts
+        .post-item
+            a(href="/posts/#{post.getPermalink()}")
+                h2 #{post.getTitle()}
+                .meta
+                    span #{viewHelper.getFormattedDate(post.getCreatedAt())}
 
-  .loadmore
-    a.btn.btn-default(href="/posts/archive") More
+    .loadmore
+        a.btn.btn-default(href="/posts/archive") More
